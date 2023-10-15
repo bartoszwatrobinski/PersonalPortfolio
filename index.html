@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bartosz Watrobinski</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+
+
+
+<body>
+    <a id="homeAnchor"></a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#homeAnchor">HOME</a></li>
+            <li><a href="#aboutAnchor">ABOUT ME</a></li>
+            <li><a href="#projects">PROJECTS</a></li>
+            <li><a href="#experience">EXPERIENCE</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="welcome">
+        <div class="container">
+            <img class="profile-picture" src="1691677107652.jpeg" alt="Your Name">
+            <div class="name">Bartosz Watrobinski</div>
+            <div class="subtitle">Software Engineer</div> <!-- New section -->
+            <div class="additional-caption">BSc Computer Science Graduate @ Queen Mary University of London</div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/your-github-username" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+
+    <a id="aboutAnchor"></a>
+    <div class="content-section about-sections">
+        <div class="about-me">
+            <h1>About Me</h1>
+            <p>I'm an BSc Computer Science graduate at Queen Mary University of London</p>
+        </div>
+        <div class="skills">
+            <h1>Skills</h1>
+            <ul>
+                <li>Example Skill 1</li>
+                <li>Example Skill 2</li>
+                <!-- Add more skill items as needed -->
+            </ul>
+            
+        </div>
+         
+        
+    </div>
+    <a id="projects"></a>
+    <div class="projects-section">
+        <h1>Projects</h1>
+        
+        <div class="project-categories">
+            <button class="category-btn" data-category="all">All</button>
+            <button class="category-btn" data-category="ai">AI</button>
+            <button class="category-btn" data-category="web">Web Development</button>
+            <button class="category-btn" data-category="mobile">Mobile Applications</button>
+        </div>
+
+        <div class="project-list">
+            <!-- Example project for AI -->
+            <div class="project" data-category="ai">
+                <div class="project-card">
+                    <img src="path-to-your-image.jpg" alt="AI Project Image" class="project-image">
+                    <h2 class="project-title">AI Project Name</h2>
+                    <p class="project-description">Description of the AI project...</p>
+                </div>
+            </div>
+
+
+            <!-- Example project for Web Development -->
+            <div class="project" data-category="ai">
+                <div class="project-card">
+                    <img src="path-to-your-image.jpg" alt="AI Project Image" class="project-image">
+                    <h2 class="project-title">AI Project Name</h2>
+                    <p class="project-description">Description of the AI project...</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const categories = document.querySelectorAll('.category-btn');
+    const projects = document.querySelectorAll('.project');
+
+    // Function to show all projects
+    function showAllProjects() {
+        projects.forEach(project => {
+            project.style.display = 'block';
+        });
+    }
+
+    // Initially show all projects
+    showAllProjects();
+
+    categories.forEach(category => {
+        category.addEventListener('click', function() {
+            const categoryType = this.getAttribute('data-category');
+            
+            // If 'ALL' button is clicked, show all projects
+            if (categoryType === 'all') {
+                showAllProjects();
+                return;
+            }
+
+            // Otherwise, hide or show projects based on the selected category
+            projects.forEach(project => {
+                if (project.getAttribute('data-category') === categoryType) {
+                    project.style.display = 'block';
+                } else {
+                    project.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+
+
+</script>
+
+</body>
+
+</html>
+
