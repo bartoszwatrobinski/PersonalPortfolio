@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bartosz Watrobinski</title>
+    <title>Name Surname</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -28,9 +28,9 @@
     <div class="welcome">
         <div class="container">
             <img class="profile-picture" src="1691677107652.jpeg" alt="Your Name">
-            <div class="name">Bartosz Watrobinski</div>
+            <div class="name">Name Surname</div>
             <div class="subtitle">Software Engineer</div> <!-- New section -->
-            <div class="additional-caption">BSc Computer Science Graduate @ Queen Mary University of London</div>
+            <div class="additional-caption">BSc Computer Science Graduate @ University of London</div>
             <div class="social-icons">
                 <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
@@ -49,7 +49,7 @@
     <div class="content-section about-sections">
         <div class="about-me">
             <h1>About Me</h1>
-            <p>I'm an BSc Computer Science graduate at Queen Mary University of London</p>
+            <p>I'm an BSc Computer Science graduate at University of London</p>
         </div>
         <div class="skills">
             <h1>Skills</h1>
@@ -66,36 +66,58 @@
     <a id="projects"></a>
     <div class="projects-section">
         <h1>Projects</h1>
-        
-        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-        
-        <div class="project-categories">
-            <button class="category-btn" data-category="all">All</button>
-            <button class="category-btn" data-category="ai">AI</button>
-            <button class="category-btn" data-category="web">Web Development</button>
-            <button class="category-btn" data-category="mobile">Mobile Applications</button>
-        </div>
 
-        <div class="project-list">
-            <!-- Example project for AI -->
-            <div class="project" data-category="ai">
-                <div class="project-card">
-                    <img src="path-to-your-image.jpg" alt="AI Project Image" class="project-image">
-                    <h2 class="project-title">AI Project Name</h2>
-                    <p class="project-description">Description of the AI project...</p>
-                </div>
+
+
+
+            <div class="project-categories">
+                <button class="category-btn" data-category="all">All</button>
+                <button class="category-btn" data-category="ai">AI</button>
+                <button class="category-btn" data-category="web">Web Development</button>
+                <button class="category-btn" data-category="mobile">Mobile Applications</button>
             </div>
 
+        <div class="carousel">
 
-            <!-- Example project for Web Development -->
-            <div class="project" data-category="ai">
-                <div class="project-card">
-                    <img src="path-to-your-image.jpg" alt="AI Project Image" class="project-image">
-                    <h2 class="project-title">AI Project Name</h2>
-                    <p class="project-description">Description of the AI project...</p>
+
+
+            <button class="carousel-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+            
+
+
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    <div class="project-list">
+                        <!-- Example project for AI -->
+                        <div class="project" data-category="ai">
+                            <div class="project-card">
+                                <img src="path-to-your-image.jpg" alt="AI Project Image" class="project-image">
+                                <h2 class="project-title">AI Project Name</h2>
+                                <p class="project-description">Description of the AI project...</p>
+                            </div>
+                        </div>
+
+
+                        <!-- Example project for Web Development -->
+                        <div class="project" data-category="web">
+                            <div class="project-card">
+                                <img src="path-to-your-image.jpg" alt="Web Development Project Image" class="project-image">
+                                <h2 class="project-title">Web Development Project Name</h2>
+                                <p class="project-description">Description of the Web Development project...</p>
+                            </div>
+                        </div>
+
+                        <div class="project" data-category="web">
+                            <div class="project-card">
+                                <img src="path-to-your-image.jpg" alt="Web Development Project Image" class="project-image">
+                                <h2 class="project-title">Web Development Project Name2</h2>
+                                <p class="project-description">Description of the Web Development project2...</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
+            <button class="carousel-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
@@ -138,6 +160,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 </script>
+<script>
+
+const track = document.querySelector('.carousel-track');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+let index = 0;
+
+nextBtn.addEventListener('click', () => {
+    index++;
+    moveCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+    index--;
+    moveCarousel();
+});
+
+function moveCarousel() {
+    const project = document.querySelector('.project');
+    const projectWidth = project.offsetWidth + parseInt(window.getComputedStyle(project).marginRight) + parseInt(window.getComputedStyle(project).marginLeft);
+    
+    let offset = index * -projectWidth;
+    track.style.transform = `translateX(${offset}px)`;
+}
+
+
+
+
+
+</script>
+
 
 </body>
 

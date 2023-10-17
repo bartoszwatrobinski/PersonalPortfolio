@@ -268,19 +268,43 @@ body, html {
     margin-right: -5px;
 }
 
-.project {
-    margin: 0 5px; 
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.carousel-btn {
+    font-size: 24px;
+    margin: 0 15px;
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+.carousel-track-container {
+    overflow: hidden;
+    width: calc(3 * 220px); /* 3 cards * width of each card (200px) + margin (20px) */
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.project {
+    flex: 0 0 auto;
+    min-width: calc(33.33% - 20px); /* Adjusts the width so that 3 cards fit on the same line with the margins. */
+    margin: 0 10px 30px; /* Keeps the margin-bottom of 30px */
+}
+
 
 .project-card {
     width: calc(33.33% - 28px); 
 }
 
-
-.project {
-
-    margin-bottom: 30px;
-}
 
 .project-card {
     display: flex;
