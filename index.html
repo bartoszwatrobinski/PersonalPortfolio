@@ -4,10 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name Surname</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bartosz Watrobinski</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/splide.min.css">
+    <script src="splide.min.js"></script>
+
+    
+
 
 
 </head>
@@ -17,25 +23,29 @@
 <body>
     <a id="homeAnchor"></a>
     <nav class="navbar">
-        <ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
             <li><a href="#homeAnchor">HOME</a></li>
             <li><a href="#aboutAnchor">ABOUT ME</a></li>
             <li><a href="#projects">PROJECTS</a></li>
-            <li><a href="#experience">EXPERIENCE</a></li>
             <li><a href="#contact">CONTACT</a></li>
         </ul>
     </nav>
     <div class="welcome">
         <div class="container">
             <img class="profile-picture" src="1691677107652.jpeg" alt="Your Name">
-            <div class="name">Name Surname</div>
-            <div class="subtitle">Software Engineer</div> <!-- New section -->
+            <div class="name">Bartosz Watrobinski</div>
+            <div class="subtitle">Software Engineer | Analyst</div> <!-- New section -->
             <div class="additional-caption">BSc Computer Science Graduate @ University of London</div>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/your-linkedin-username/" target="_blank">
+                <a href="https://www.linkedin.com/in/bartosz-watrobinski-a4b1ba202/" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/your-github-username" target="_blank">
+                <a href="https://github.com/bartoszwatrobinski" target="_blank">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
@@ -46,121 +56,69 @@
     </div>
 
     <a id="aboutAnchor"></a>
-    <div class="content-section about-sections">
-        <div class="about-me">
-            <h1>About Me</h1>
-            <p>I'm an BSc Computer Science graduate at University of London</p>
+    <div class="container">
+        <div class="box skills" id="aboutBox">
+            <h2>About Me</h2>
+            <p class="description">My name is Bartosz Watrobinski. I’m a highly passionate and detail-oriented software engineer with a focus in Natural Language Processing.
+I have experience of working on multiple software development and data analytics projects.
+My final-year undergraduate project in generative AI utilized language models to answer admissions-related questions of the university page visitors.</p>
+<p class = "description"> 
+I graduated with First Class Honours from BSc Computer Science at Queen Mary University of London.
+</p>
         </div>
-        <div class="skills">
-            <h1>Skills</h1>
-            <ul>
-                <li>Example Skill 1</li>
-                <li>Example Skill 2</li>
-                <!-- Add more skill items as needed -->
-            </ul>
-            
+        <div class="box skills" id="skillsBox">
+            <h2>Skills</h2>
+            <div class="tags">
+                <span class="tag">PYTHON</span>
+                <span class="tag">JAVASCRIPT</span>
+                <span class="tag">CSS</span>
+                <span class="tag">HTML</span>
+                <span class="tag">REACT</span>
+                <span class="tag">SQL</span>
+                <span class="tag">R (ANALYTICS)</span>
+                <span class="tag">APACHE SPARK</span>
+            </div>
         </div>
-         
-        
     </div>
+
     <a id="projects"></a>
     <div class="projects-section">
-        <h1>Projects</h1>
+        <h1 class="projects-header">Projects</h1>
 
 
 
 
-            <div class="project-categories">
-                <button class="category-btn" data-category="all">All</button>
-                <button class="category-btn" data-category="ai">AI</button>
-                <button class="category-btn" data-category="web">Web Development</button>
-                <button class="category-btn" data-category="mobile">Mobile Applications</button>
-            </div>
-
-        <div class="carousel">
 
 
-
-            <button class="carousel-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
             
+        
+    </div>
+    <div class='carousel-container'>
+        <div class="splide">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide" data-category="web">
+                    Slide 1
+                    <img src="chatphoto.png" alt="QMBot photo">
+                    
+                    
+                    
+                    
+                    </li>
+                    <li class="splide__slide" data-category="web">
+                    Slide 2
+                    <img src="portfolio.png" alt="portfolio">
 
-
-            <div class="carousel-track-container">
-                <div class="carousel-track">
-                    <div class="project-list">
-                        <!-- Example project for AI -->
-                        <div class="project" data-category="ai">
-                            <div class="project-card">
-                                <img src="path-to-your-image.jpg" alt="AI Project Image" class="project-image">
-                                <h2 class="project-title">AI Project Name</h2>
-                                <p class="project-description">Description of the AI project...</p>
-                            </div>
-                        </div>
-
-
-                        <!-- Example project for Web Development -->
-                        <div class="project" data-category="web">
-                            <div class="project-card">
-                                <img src="path-to-your-image.jpg" alt="Web Development Project Image" class="project-image">
-                                <h2 class="project-title">Web Development Project Name</h2>
-                                <p class="project-description">Description of the Web Development project...</p>
-                            </div>
-                        </div>
-
-                        <div class="project" data-category="web">
-                            <div class="project-card">
-                                <img src="path-to-your-image.jpg" alt="Web Development Project Image" class="project-image">
-                                <h2 class="project-title">Web Development Project Name2</h2>
-                                <p class="project-description">Description of the Web Development project2...</p>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
+                    </li>
+                    <li class="splide__slide" data-category="ai">Slide 3</li>
+                    <li class="splide__slide" data-category="ai">Slide 4</li>
+                    <li class="splide__slide" data-category="ai">Slide 5</li>
+                    <!-- Add more slides as needed -->
+                </ul>
             </div>
-            <button class="carousel-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const categories = document.querySelectorAll('.category-btn');
-    const projects = document.querySelectorAll('.project');
-
-    // Function to show all projects
-    function showAllProjects() {
-        projects.forEach(project => {
-            project.style.display = 'block';
-        });
-    }
-
-    // Initially show all projects
-    showAllProjects();
-
-    categories.forEach(category => {
-        category.addEventListener('click', function() {
-            const categoryType = this.getAttribute('data-category');
-            
-            // If 'ALL' button is clicked, show all projects
-            if (categoryType === 'all') {
-                showAllProjects();
-                return;
-            }
-
-            // Otherwise, hide or show projects based on the selected category
-            projects.forEach(project => {
-                if (project.getAttribute('data-category') === categoryType) {
-                    project.style.display = 'block';
-                } else {
-                    project.style.display = 'none';
-                }
-            });
-        });
-    });
-});
-
-
-</script>
 <script>
 
 const track = document.querySelector('.carousel-track');
@@ -192,6 +150,96 @@ function moveCarousel() {
 
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const boxes = document.querySelectorAll('.box');
+
+    const slideInOptions = {
+        rootMargin: '-100px 0px',
+        threshold: 0
+    };
+
+    const slideInOnScroll = new IntersectionObserver(function(entries, slideInOnScroll) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) {
+                return;
+            } else {
+                entry.target.classList.add('slide-in');
+                slideInOnScroll.unobserve(entry.target);
+            }
+        });
+    }, slideInOptions);
+
+    boxes.forEach(box => {
+        slideInOnScroll.observe(box);
+    });
+
+});
+// Debounce function to optimize scroll event
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+</script>
+
+<script>
+
+var splide = new Splide( '.splide', {
+  type   : 'loop',
+  perPage: 3,
+  focus  : 'center',
+  gap: '20px'
+} );
+
+splide.mount();
+
+
+document.querySelectorAll('.category-btn').forEach(function(button) {
+  button.addEventListener('click', function() {
+    var categoryValue = this.getAttribute('data-category');
+
+    // Show all slides
+    if (categoryValue === 'all') {
+      splide.getSlides().forEach(function(slide) {
+        slide.slide.style.display = '';
+      });
+    } else {
+      // Hide or show slides based on their category
+      splide.getSlides().forEach(function(slide) {
+        if (slide.slide.getAttribute('data-category') !== categoryValue) {
+          slide.slide.style.display = 'none';
+        } else {
+          slide.slide.style.display = '';
+        }
+      });
+    }
+
+    // Refresh Splide to recalculate slide positions
+    splide.refresh();
+  });
+});
+
+
+</script>
+<script>
+const mobileMenuButton = document.getElementById("mobile-menu");
+const navList = document.querySelector(".nav-list");
+
+mobileMenuButton.addEventListener("click", function() {
+   navList.classList.toggle("active");
+});
+
+</script>
 
 </body>
 
