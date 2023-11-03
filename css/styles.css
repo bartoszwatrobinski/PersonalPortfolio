@@ -17,13 +17,19 @@ body, html {
 }
 
 
+
+
+
 .container {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center;
-    height: 100vh;  
+    height: auto;
+    overflow: hidden; 
+    flex-wrap: wrap;
+    min-height: 100vh;
 }
 
 .profile-picture {
@@ -37,6 +43,7 @@ body, html {
     margin-bottom: 20px;
     padding:0;
     animation: slideAndFadeIn 1s forwards;
+    object-fit: contain;
 }
 
 .name {
@@ -55,6 +62,7 @@ body, html {
     color: #333;     
     opacity: 0;       
     animation: slideAndFadeInSubtitle 1s forwards 2s; 
+    
 }
 
 .navbar {
@@ -121,11 +129,13 @@ body, html {
 
 
 .welcome {
-    height: 100vh; 
+    min-height: 100vh; 
     background-color: white;
     display: flex; 
     justify-content: center; 
     align-items: center; 
+    
+    
 }
 
 
@@ -184,20 +194,20 @@ body, html {
     }
 }
 .social-icons::before {
-    content: ''; /* Required for pseudo-elements */
+    content: ''; 
     display: block; 
     width: 2px; 
     height: calc(64px + 10px); 
     background-color: #333; 
     margin-bottom: 10px; 
-    opacity: 0; /* Initially invisible */
+    opacity: 0; 
     animation: fadeInIcon 1s forwards 1s; 
     animation: fadeInIcon 1s forwards 5s;
 }
 
 .about-sections {
     display: flex;
-    justify-content: center; /* Aligns the items to the center */
+    justify-content: center; 
     padding: 20px;
     flex-wrap: wrap;
 }
@@ -214,7 +224,7 @@ body, html {
 
     background-color:  	#282828; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); 
-    border: none; /* Ensuring no border */
+    border: none; 
     opacity: 0;
     transform: translateX(-100%);
     transition: all 0.5s ease-out;
@@ -253,8 +263,8 @@ body, html {
     background-color: #ffffff;
     padding: 20px;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-    transform: translateX(100%); /* Initially move them off-screen */
-    transition: transform 0.7s ease-out; /* Animation effect */
+    transform: translateX(100%); 
+    transition: transform 0.7s ease-out; 
     color:#536872;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -292,7 +302,7 @@ body, html {
     
     font-size:22px;
     position: absolute; 
-    top: 15px; /* Distance from the top of the section */
+    top: 15px; 
     left: 15px; 
     margin: 0; 
     
@@ -308,7 +318,8 @@ body, html {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    align-items: start; /* Aligns the top of the cards */
+    align-items: start; 
+    
 }
 
 
@@ -362,8 +373,8 @@ body, html {
 
 .project {
     flex: 0 0 auto;
-    min-width: calc(33.33% - 20px); /* Adjusts the width so that 3 cards fit on the same line with the margins. */
-    margin: 0 10px 30px; /* Keeps the margin-bottom of 30px */
+    min-width: calc(33.33% - 20px); 
+    margin: 0 10px 30px; 
 }
 
 
@@ -475,33 +486,89 @@ html {
 
 .splide {
     margin: 0 auto;
-    max-width: 2700px; /* adjust as needed */
-    overflow: auto;
+    max-width: 2700px; 
     background-color: #edf2f8;
     height: 1000px;
+    overflow:hidden;
 }
 
 .splide__slide {
-    background-color: black; /* purple background, adjust if needed */
+    background-color: black; 
     border-radius: 15px;
-    margin: 0 20px; /* adjust as needed */
-    color: #edf2f8; /* text color */
+    margin: 0 20px; 
+    color: #edf2f8; 
     display: flex;
-    flex-direction: column;
-    align-items: center; /* center content horizontally */
-    justify-content: space-between; /* space out content vertically */
-    width: 0px;    /* Adjust to your desired width */
+    
+    align-items: center; 
+    justify-content: space-between; 
+    width: 0px;    
     height: 500px;
-    margin-right: 20px;
-    overflow:auto;
+    
+   
     box-shadow: 0px 10px 30px rgba(0, 0, 0.6, 0.6); 
     width: 700px !important;
+    position:relative;
     
 }
 
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide-title {
+    font-size: 24px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+.slide-tech-stack {
+    position:absolute;
+    font-size: 18px; /* Adjust as needed */
+    margin-bottom: 10px; /* Adjust as needed */
+    color: red;
+}
+
+.slide-description {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: calc(100% - 420px); /* Adjust as needed */
+}
+
+.slide-title, .slide-tech-stack, .slide-description {
+    max-width: 60%;  /* Adjust as necessary */
+}
+
+.slide-img {
+    flex: 1;
+    max-width: 1%;  /* Adjust as necessary */
+    height: auto;
+    object-fit: cover;
+}
+@media (min-width: 768px) {
+    .slide-img {
+        max-width: 40%;  /* Adjust for larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .slide-img {
+        max-width: 30%;  /* Adjust for smaller screens */
+    }
+}
+
+
+
 .slide-button {
     background-color: white;
-    color: #01e29c; /* purple text color, adjust if needed */
+    color: #01e29c; 
     padding: 10px 20px;
     border-radius: 50px;
     border: none;
@@ -510,11 +577,11 @@ html {
 }
 
 .slide-button:hover {
-    background-color: #01e29c; /* adjust for hover effect */
+    background-color: #01e29c; 
 }
 
 .splide__arrow {
-    color: white; /* adjust as needed */
+    color: white;
 }
 
 
@@ -523,8 +590,8 @@ html {
 
 .carousel-container {
     padding-top: 30px;
-    margin-top: 50px;     /* Space above the carousel */
-    margin-bottom: 50px;  /* Space below the carousel */
+    margin-top: 50px;     
+    margin-bottom: 50px;  
 }
 
 .splide__track{
@@ -540,8 +607,8 @@ html {
 }
 
 .splide__slide:hover {
-    transform: translateY(-10px); /* Adjust 10px to the amount you want the slide to move down */
-    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateY(-10px); 
+    transition: transform 0.3s ease; 
     z-index: 2; 
     
     
@@ -549,97 +616,100 @@ html {
 
 
 .splide .splide__arrow {
-    background-color: #01e29c; /* Light green button color */
-    color: white; /* Arrow color */
+    top: 50%;
+    transform: translateY(50%);
+    position: absolute;
+    z-index: 10;
+    background-color: #01e29c; 
+    color: white;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    border-radius: 50%; /* Makes the button round */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .splide__arrow:hover {
-    background-color: #00c285; /* Slightly darker green on hover */
+    background-color: #00c285; 
 }
 
-/* Adjust positions if needed */
+
 .splide .splide__arrow--prev {
-    left: 350px; /* Adjust as needed */
-    top: 50%;
+    left: 2vw; 
+    top: 50vh; 
     transform: translateY(-50%);
     z-index: 2;
 }
 
 .splide .splide__arrow--next {
-    right: 350px; /* Adjust as needed */
-    top: 50%;
+    right: 2vw; /* Adjust as needed */
+    top: 50vh;
     transform: translateY(-50%);
     z-index: 2;
 }
 
+
 .splide__pagination {
-    bottom: 380px !important; /* adjust this value as needed */
-    position: relative; /* if it's not already set */
+    bottom: 380px !important; 
+    position: relative; 
 }
 .splide__slide img[alt="QMBot photo"] {
-    width: 300px;    /* adjust to your desired width */
-    height: auto;    /* maintains the aspect ratio */
-    display: block;  /* to remove any space below the image */
-    margin: 0 auto;  /* centers the image horizontally if slide is larger than the image */
+    width: 300px;   
+    height: auto;    
+    display: block;  
+    margin: 0 auto;  
 }
 .splide__slide img[alt="portfolio"] {
-    width: 500px;    /* adjust to your desired width */
-    height: auto;    /* maintains the aspect ratio */
-    display: block;  /* to remove any space below the image */
-    margin: 0 auto;  /* centers the image horizontally if slide is larger than the image */
+    width: 500px;    
+    height: auto;    
+    display: block;  
+    margin: 0 auto; 
 }
 
 .splide__pagination .splide__pagination__page.is-active {
-    background-color: #01e29c;  /* Change to the desired color for the active dot */
+    background-color: #01e29c;  
 }
 
-@media (max-height: 695px) {  /* adjust 500px according to your needs */
+
+
+
+
+@media (max-height: 695px) {  
     .social-icons {
         display: none;
     }
 }
 @media (max-width: 768px) {
     .about-me h1, .skills h1 {
-        font-size: 18px; /* Adjust this value based on your needs */
+        font-size: 18px;
     }
 }
 .menu-toggle {
     display: none;
 }
 
-/* By default, display the nav-list */
+
 .nav-list {
     display: flex;
 }
 
 /* Mobile styles */
 @media screen and (max-width: 768px) {
-    /* Display the menu-toggle on mobile */
+    
     .menu-toggle {
         display: flex;
     }
 
-    /* Hide the nav-list by default on mobile */
+    
     .nav-list {
         width: 100%;
         text-align: center;
         position: absolute;
-        top: 0;            /* Ensure it's at the top */
+        top: 0;            
         left: 0;
         background-color: rgba(255, 255, 255, 0.9);
         display: none;
         flex-direction: column;
-        margin-top: 0;     /* Ensure there's no margin pushing it down */
-        padding-top: 0;    /* Ensure there's no padding pushing it down */
+        margin-top: 0;     
+        padding-top: 0;    
     }
 
     /* When nav-list is active, display it */
@@ -647,7 +717,7 @@ html {
         display: flex;
     }
 
-    /* Styling for the menu-toggle bars */
+    
     .menu-toggle .bar {
         background-color: gray;
         height: 3px;
@@ -655,4 +725,54 @@ html {
         margin: 3px;
         transition: 0.3s;
     }
+}
+.splide__slide {
+    width: 700px !important;
+}
+
+/* When window width is between 769px and 1024px */
+@media (max-width: 1024px) {
+    .splide__slide {
+        width: 600px !important;
+    }
+}
+
+/* When window width is between 577px and 768px */
+@media (max-width: 768px) {
+    .splide__slide {
+        width: 500px !important;
+    }
+}
+
+/* When window width is 576px or less */
+@media (max-width: 576px) {
+    .splide__slide {
+        width: 300px !important;
+    }
+}
+@media (max-width: 768px) { 
+    .splide .splide__arrow--prev {
+        left: 10%; 
+        bottom: 40%; 
+        top: auto;
+        right: auto;
+        transform: none;
+    }
+
+    .splide .splide__arrow--next {
+        right: 10%;
+        bottom: 40%; 
+        top: auto;
+        left: auto;
+        transform: none;
+    }
+}
+.splide .splide__arrow--next:hover svg {
+    transform: translateX(5px) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.splide .splide__arrow--prev:hover svg {
+    transform: scaleX(-1) translateX(5px) !important;
+    transition: transform 0.3s ease !important;
 }
