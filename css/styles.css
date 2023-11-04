@@ -342,83 +342,7 @@ body, html {
     background-color: #ddd;
 }
 
-.project-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-left: -5px;  
-    margin-right: -5px;
-}
 
-.carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.carousel-btn {
-    font-size: 24px;
-    margin: 0 15px;
-}
-
-.carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.1);
-}
-
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s;
-}
-
-.project {
-    flex: 0 0 auto;
-    min-width: calc(33.33% - 20px); 
-    margin: 0 10px 30px; 
-}
-
-
-.project-card {
-    width: calc(33.33% - 28px); 
-}
-
-d
-.project-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid #ccc;
-    padding: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s;
-    width: 200px; 
-    height: 350px;
-    margin: 20px; 
-    background-color: #fff;
-}
-
-.project-card:hover {
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.project-image {
-    width: 100%;
-    height: 60%; 
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.project-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.project-description {
-    font-size: 14px;
-    text-align: center;
-    flex-grow: 1; 
-}
 
 
 .projects-header{
@@ -489,7 +413,7 @@ html {
     max-width: 2700px; 
     background-color: #edf2f8;
     height: 1000px;
-    overflow:hidden;
+    
 }
 
 .splide__slide {
@@ -498,9 +422,13 @@ html {
     margin: 0 20px; 
     color: #edf2f8; 
     display: flex;
-    
-    align-items: center; 
-    justify-content: space-between; 
+    flex-direction: row;
+    align-items: flex-start; 
+    padding-top:10px;
+    padding-left: 10px;
+    padding-bottom:5px;
+    box-sizing:border-box;
+    gap:20px;
     width: 0px;    
     height: 500px;
     
@@ -514,32 +442,47 @@ html {
 .slide-content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    gap:10px;
+    align-items: center;
     height: 100%;
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    overflow:hidden;
+    
 }
-
+.slide-year {
+    font-size: 16px; /* adjust based on your preference */
+    color: #999; /* adjust based on your preference */
+}
 .slide-title {
+    
     font-size: 24px; /* Adjust as needed */
-    margin-bottom: 10px; /* Adjust as needed */
+    margin:0;
 }
 
 .slide-tech-stack {
-    position:absolute;
-    font-size: 18px; /* Adjust as needed */
-    margin-bottom: 10px; /* Adjust as needed */
-    color: red;
+    left:5px;
 }
 
+.technology {
+    text-decoration: underline;
+    text-decoration-color: #01e29c; /* Replace with your desired color */
+    padding: 2px; /* This will help the background color stand out */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+  }
+  
+  .technology:hover {
+    background-color: #01e29c; /* Replace with your desired color */
+
+  }
+
 .slide-description {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: calc(100% - 420px); /* Adjust as needed */
+    font-size: 16px;
+    margin:0;
+
 }
 
 .slide-title, .slide-tech-stack, .slide-description {
@@ -547,20 +490,35 @@ html {
 }
 
 .slide-img {
-    flex: 1;
-    max-width: 1%;  /* Adjust as necessary */
-    height: auto;
-    object-fit: cover;
+    
+
+
+    width: 360px !important;  /* Takes full width of container */
+    height: auto; /* Maintains aspect ratio */
+    flex-shrink:0;
+    
+    
 }
+
+.slide-title, .slide-tech-stack, .slide-description {
+    flex-grow: 0;    /* They don't grow beyond their content size */
+    flex-shrink: 1;  /* They can shrink if there's not enough space */
+    flex-basis: auto; /* Default size based on content */
+
+    
+    
+    
+}
+
 @media (min-width: 768px) {
     .slide-img {
-        max-width: 40%;  /* Adjust for larger screens */
+        max-width: 80%;  /* Adjust for larger screens */
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .slide-img {
-        max-width: 30%;  /* Adjust for smaller screens */
+        max-width: 70%;  /* Adjust for smaller screens */
     }
 }
 
@@ -776,3 +734,67 @@ html {
     transform: scaleX(-1) translateX(5px) !important;
     transition: transform 0.3s ease !important;
 }
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .splide__slide {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide-img, .slide-content {
+        order: -1;  /* This will place the image on top */
+        margin: 10px 0; /* Adds a bit of space between image and text */
+    }
+}
+
+@media (max-width: 768px) {
+    .slide-content {
+        padding: 0; /* Remove padding for smaller screens */
+    }
+
+    .slide-year {
+        font-size: 14px;
+    }
+
+    .slide-title {
+        font-size: 20px;
+    }
+
+    .slide-tech-stack {
+        font-size: 16px;
+    }
+
+    .slide-description {
+        font-size: 14px;
+    }
+
+    .slide-title,
+    .slide-tech-stack,
+    .slide-description {
+        max-width: 80%;
+    }
+}
+
+#contact {
+    text-align: center;
+    margin: 50px 0 20px;
+    overflow: hidden; /* Prevents horizontal scrollbar if elements slide in from the sides */
+  }
+  
+  .contact-card {
+    opacity: 0;
+    transform: translateY(100px); /* Starts the elements off-screen */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .contact-card.visible {
+    opacity: 1;
+    transform: translateY(0); /* Brings the elements into view */
+  }
+  
+  
+  h2 {
+    margin-bottom: 20px; /* Optional: Adjust as needed to position your heading */
+  }
+  
