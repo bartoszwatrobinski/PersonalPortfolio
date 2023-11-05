@@ -454,12 +454,12 @@ html {
     
 }
 .slide-year {
-    font-size: 16px; /* adjust based on your preference */
-    color: #999; /* adjust based on your preference */
+    font-size: 16px; 
+    color: #999; 
 }
 .slide-title {
     
-    font-size: 24px; /* Adjust as needed */
+    font-size: 24px; 
     margin:0;
 }
 
@@ -469,13 +469,13 @@ html {
 
 .technology {
     text-decoration: underline;
-    text-decoration-color: #01e29c; /* Replace with your desired color */
-    padding: 2px; /* This will help the background color stand out */
+    text-decoration-color: #01e29c; 
+    padding: 2px; 
     transition: background-color 0.3s; /* Smooth transition for background color */
   }
   
   .technology:hover {
-    background-color: #01e29c; /* Replace with your desired color */
+    background-color: #01e29c; 
 
   }
 
@@ -486,24 +486,24 @@ html {
 }
 
 .slide-title, .slide-tech-stack, .slide-description {
-    max-width: 60%;  /* Adjust as necessary */
+    max-width: 90%;  
 }
 
 .slide-img {
     
 
 
-    width: 360px !important;  /* Takes full width of container */
-    height: auto; /* Maintains aspect ratio */
+    width: 360px !important;  
+    height: auto; 
     flex-shrink:0;
     
     
 }
 
 .slide-title, .slide-tech-stack, .slide-description {
-    flex-grow: 0;    /* They don't grow beyond their content size */
-    flex-shrink: 1;  /* They can shrink if there's not enough space */
-    flex-basis: auto; /* Default size based on content */
+    flex-grow: 0;    
+    flex-shrink: 1; 
+    flex-basis: auto; 
 
     
     
@@ -512,13 +512,13 @@ html {
 
 @media (min-width: 768px) {
     .slide-img {
-        max-width: 80%;  /* Adjust for larger screens */
+        max-width: 80%;  
     }
 }
 
 @media (max-width: 768px) {
     .slide-img {
-        max-width: 70%;  /* Adjust for smaller screens */
+        max-width: 70%;  
     }
 }
 
@@ -549,7 +549,7 @@ html {
 .carousel-container {
     padding-top: 30px;
     margin-top: 50px;     
-    margin-bottom: 50px;  
+     
 }
 
 .splide__track{
@@ -562,6 +562,7 @@ html {
     height:600px;
     padding-top: 50px;
     background-color: #edf2f8;
+    
 }
 
 .splide__slide:hover {
@@ -598,7 +599,7 @@ html {
 }
 
 .splide .splide__arrow--next {
-    right: 2vw; /* Adjust as needed */
+    right: 2vw; 
     top: 50vh;
     transform: translateY(-50%);
     z-index: 2;
@@ -670,7 +671,7 @@ html {
         padding-top: 0;    
     }
 
-    /* When nav-list is active, display it */
+   
     .nav-list.active {
         display: flex;
     }
@@ -735,7 +736,7 @@ html {
     transition: transform 0.3s ease !important;
 }
 
-/* Mobile Styles */
+
 @media screen and (max-width: 768px) {
     .splide__slide {
         flex-direction: column;
@@ -743,14 +744,14 @@ html {
     }
 
     .slide-img, .slide-content {
-        order: -1;  /* This will place the image on top */
-        margin: 10px 0; /* Adds a bit of space between image and text */
+        order: -1; 
+        margin: 10px 0; 
     }
 }
 
 @media (max-width: 768px) {
     .slide-content {
-        padding: 0; /* Remove padding for smaller screens */
+        padding: 0; 
     }
 
     .slide-year {
@@ -778,23 +779,24 @@ html {
 
 #contact {
     text-align: center;
-    margin: 50px 0 20px;
-    overflow: hidden; /* Prevents horizontal scrollbar if elements slide in from the sides */
+    margin: 50px 0 0;
+    
+    
   }
   
   .contact-card {
     opacity: 0;
-    transform: translateY(100px); /* Starts the elements off-screen */
+    transform: translateY(50px); 
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
   
   .contact-card.visible {
     opacity: 1;
-    transform: translateY(0); /* Brings the elements into view */
+    transform: translateY(0);
   }
   
   
   h2 {
-    margin-bottom: 20px; /* Optional: Adjust as needed to position your heading */
+    margin-bottom: 20px; 
   }
   
