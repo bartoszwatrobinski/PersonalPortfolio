@@ -412,9 +412,10 @@ html {
     margin: 0 auto;
     max-width: 2700px; 
     background-color: #edf2f8;
-    height: 1000px;
+    height: 600px;
     
 }
+
 
 .splide__slide {
     background-color: black; 
@@ -429,12 +430,12 @@ html {
     padding-bottom:5px;
     box-sizing:border-box;
     gap:20px;
-    width: 0px;    
+
     height: 500px;
     
    
     box-shadow: 0px 10px 30px rgba(0, 0, 0.6, 0.6); 
-    width: 700px !important;
+
     position:relative;
     
 }
@@ -547,9 +548,8 @@ html {
 
 
 .carousel-container {
-    padding-top: 30px;
-    margin-top: 50px;     
-     
+    
+     position:relative;
 }
 
 .splide__track{
@@ -607,7 +607,13 @@ html {
 
 
 .splide__pagination {
-    bottom: 380px !important; 
+    top: 100%; /* This positions the top of the dot container just below the slides */
+    transform: translateY(10px); /* This will push it further down from the slides */
+    display: flex;
+    justify-content: center; /* This centers the dots horizontally */
+    align-items: center;
+    height: 20px; /* Adjust the height as necessary */
+  
     position: relative; 
 }
 .splide__slide img[alt="QMBot photo"] {
@@ -777,26 +783,75 @@ html {
     }
 }
 
-#contact {
+.footer {
     text-align: center;
-    margin: 50px 0 0;
-    
-    
+    margin: 80px 0 0;
+    padding: 20px;
+    position: relative;
+    padding-bottom: 50px;
   }
+
+  .footer-rights {
+    position: absolute; 
+    right: 0; 
+    bottom: 10px; 
+    text-align: right; 
+    padding-right: 20px; 
+}
   
-  .contact-card {
-    opacity: 0;
-    transform: translateY(50px); 
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  
-  .contact-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  
-  h2 {
+  .footer h2 {
+    margin-top: 0;
     margin-bottom: 20px; 
-  }
-  
+    text-align: center;
+    width: 100%;
+    height:auto;
+    color:#536872;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 31px;
+}
+
+.footer p {
+    color: #666;
+}
+
+.footer-icons {
+    margin-top: 20px; 
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 80px;
+}
+
+.footer-icons a {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 10px;
+    padding: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    color: #333; 
+    background-color: transparent; 
+    text-decoration: none; 
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    font-size: 24px; 
+}
+
+.footer-icons a:hover {
+    background-color: #01e29c; 
+    color: #ffffff;
+    transform: scale(1.2); 
+    border-color: #01e29c; 
+}
+
+.footer-icons img {
+    width: 20px; 
+    height: auto;
+}
+
+.footer-rights p {
+    color: black; 
+    font-size: 14px; 
+    margin: 0; 
+    font-size:15px
+}
