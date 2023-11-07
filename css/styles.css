@@ -855,3 +855,13 @@ html {
     margin: 0; 
     font-size:15px
 }
+
+.splide__slide a {
+    text-decoration: none !important; /* Removes underline, overriding other styles */
+    color: inherit !important; /* Inherits color from parent, overriding other styles */
+}
+
+.splide__slide a:hover {
+    text-decoration: none !important; /* Ensures underline doesn't appear on hover, overriding other styles */
+    /* Any other hover effects you want can be added here */
+}
