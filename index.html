@@ -86,10 +86,6 @@ I graduated with First Class Honours from BSc Computer Science at Queen Mary Uni
         <h1 class="projects-header">Projects</h1>
 
 
-
-
-
-
             
         
     </div>
@@ -97,26 +93,29 @@ I graduated with First Class Honours from BSc Computer Science at Queen Mary Uni
         <div class="splide">
             <div class="splide__track">
                 <ul class="splide__list">
-                    <li class="splide__slide" data-category="web" id="slide1">
-                        <img src="chatphoto.png" alt="QMBot photo" class="slide-img">
-                        <div class="slide-content">
-                            <span class="slide-year">2023</span>
-                            <h1 class="slide-title">QMBot</h1>
-                            <p class="slide-description">
-                            A question-answering system created for EECS that answers questions regarding the admission process information stored on the university website to improve user experience
-                            </p>
-                            <span class="slide-tech-stack">  
-                                <span class="technology">Python</span>
-                                <span class="technology">Flask</span>
-                                <span class="technology">PyTorch</span>
-                                <span class="technology">Transformers</span>
-                                <span class="technology">Docker</span>
-                                <span class="technology">Elasticsearch</span>
-                                <span class="technology">Haystack</span>
-                            </span>
-                        </div>
+                    <li class="splide__slide" data-category="web" id="slide1" data-url="https://github.com/bartoszwatrobinski/QMbot">
+                
+                            <img src="chatphoto.png" alt="QMBot photo" class="slide-img">
+                            <div class="slide-content">
+                                <span class="slide-year">2023</span>
+                                <h1 class="slide-title">QMBot</h1>
+                                <p class="slide-description">
+                                A question-answering system created for EECS that answers questions regarding the admission process information stored on the university website to improve user experience
+                                </p>
+                                <span class="slide-tech-stack">  
+                                    <span class="technology">Python</span>
+                                    <span class="technology">Flask</span>
+                                    <span class="technology">PyTorch</span>
+                                    <span class="technology">Transformers</span>
+                                    <span class="technology">Docker</span>
+                                    <span class="technology">Elasticsearch</span>
+                                    <span class="technology">Haystack</span>
+                                </span>
+                                
+                            </div>
+                        
                     </li>
-                    <li class="splide__slide" data-category="web" id="slide2">
+                    <li class="splide__slide" data-category="web" id="slide2" data-url="https://github.com/bartoszwatrobinski/exam-app">
                         
                         <img src="examapp.png" alt="" class="slide-img">
                         <div class="slide-content">
@@ -133,9 +132,10 @@ I graduated with First Class Honours from BSc Computer Science at Queen Mary Uni
                                 <span class="technology">HTML</span>
                                 <span class="technology">CSS</span>           
                             </span>
+                            
                         </div>
                     </li>
-                    <li class="splide__slide" data-category="web" id="slide3">
+                    <li class="splide__slide" data-category="web" id="slide3" data-url="https://github.com/bartoszwatrobinski/weather-app">
                         
                         <img src="weather.png" alt="" class="slide-img">
                         <div class="slide-content">
@@ -151,10 +151,11 @@ I graduated with First Class Honours from BSc Computer Science at Queen Mary Uni
                                 <span class="technology">HTML</span>
                                 <span class="technology">CSS</span>               
                             </span>
+                            
                         </div>
                     </li>
                     
-                        <li class="splide__slide" data-category="web" id="slide4">
+                        <li class="splide__slide" data-category="web" id="slide4" data-url="https://github.com/bartoszwatrobinski/classification-task-cifar10">
                             
                             <img src="plots.png" alt="plots" class="slide-img">
                             <div class="slide-content">
@@ -169,10 +170,11 @@ I graduated with First Class Honours from BSc Computer Science at Queen Mary Uni
                                     <span class="technology">Matplotlib</span>
                                     <span class="technology">NumPy</span>      
                                 </span>
+                                
                             </div>
                         </li>
                     
-                    <li class="splide__slide" data-category="web" id="slide5">
+                    <li class="splide__slide" data-category="web" id="slide5" data-url="https://github.com/bartoszwatrobinski/PersonalPortfolio">
                         
                         <img src="portfolio.png" alt="portfolio" class="slide-img">
                         <div class="slide-content">
@@ -186,6 +188,7 @@ I graduated with First Class Honours from BSc Computer Science at Queen Mary Uni
                                 <span class="technology">CSS</span>
                                 <span class="technology">JavaScript</span>
                             </span>
+                            
                         </div>
                     </li>
                 </ul>
@@ -321,6 +324,26 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(card);
   });
 });
+
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all slides
+    var slides = document.querySelectorAll('.splide__slide');
+
+    // Attach a click event listener to each slide
+    slides.forEach(function(slide) {
+        slide.addEventListener('click', function() {
+            // Get the URL from the data-url attribute
+            var url = slide.getAttribute('data-url');
+            // Navigate to the URL
+            window.open(url, '_blank');
+        });
+    });
+});
+
+
 
 </script>
 </body>
