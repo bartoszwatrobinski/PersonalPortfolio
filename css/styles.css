@@ -158,6 +158,8 @@ body, html {
     animation: slideAndFadeInAdditionalCaption 1s forwards 2.5s; 
 }
 
+
+
 .social-icons {
     position: absolute; 
     bottom: 20px; 
@@ -699,6 +701,7 @@ html {
 @media (max-width: 1024px) {
     .splide__slide {
         width: 600px !important;
+        height:530px !important;
     }
 }
 
@@ -856,12 +859,7 @@ html {
     font-size:15px
 }
 
-.splide__slide a {
-    text-decoration: none !important; /* Removes underline, overriding other styles */
-    color: inherit !important; /* Inherits color from parent, overriding other styles */
-}
-
-.splide__slide a:hover {
-    text-decoration: none !important; /* Ensures underline doesn't appear on hover, overriding other styles */
-    /* Any other hover effects you want can be added here */
+.splide__slide {
+    
+    cursor: pointer; 
 }
